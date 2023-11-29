@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-28T17:44:12 CST" name="Suite" finished-at="2023-11-28T17:44:22 CST" duration-ms="9816">
+  <suite started-at="2023-11-29T15:09:31 CST" name="Default suite" finished-at="2023-11-29T15:09:37 CST" duration-ms="6252">
     <groups>
     </groups>
-    <test started-at="2023-11-28T17:44:12 CST" name="Test" finished-at="2023-11-28T17:44:22 CST" duration-ms="9816">
+    <test started-at="2023-11-29T15:09:31 CST" name="Default test" finished-at="2023-11-29T15:09:37 CST" duration-ms="6252">
       <class name="com.testscenario.FB_Login">
-        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:com.testscenario.FB_Login@1c7696c6]" started-at="2023-11-28T17:44:12 CST" name="beforeClass" finished-at="2023-11-28T17:44:15 CST" duration-ms="2899" status="PASS">
+        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:31 CST" name="beforeClass" finished-at="2023-11-29T15:09:32 CST" duration-ms="1480" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,27 +18,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="Fb_login()[pri:0, instance:com.testscenario.FB_Login@1c7696c6]" started-at="2023-11-28T17:44:15 CST" name="Fb_login" finished-at="2023-11-28T17:44:17 CST" duration-ms="2464" status="PASS">
+        <test-method signature="Fb_login()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:32 CST" name="Fb_login" finished-at="2023-11-29T15:09:34 CST" duration-ms="1285" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fb_login -->
-        <test-method is-config="true" signature="takeScreenshot()[pri:0, instance:com.testscenario.FB_Login@1c7696c6]" started-at="2023-11-28T17:44:17 CST" name="takeScreenshot" finished-at="2023-11-28T17:44:18 CST" duration-ms="1347" status="PASS">
+        <test-method is-config="true" signature="takeScreenshot()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:34 CST" name="takeScreenshot" finished-at="2023-11-29T15:09:35 CST" duration-ms="1752" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method signature="google_login()[pri:0, instance:com.testscenario.FB_Login@1c7696c6]" started-at="2023-11-28T17:44:18 CST" name="google_login" finished-at="2023-11-28T17:44:20 CST" duration-ms="1549" status="PASS">
+        <test-method signature="google_login()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:36 CST" name="google_login" finished-at="2023-11-29T15:09:37 CST" duration-ms="1192" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- google_login -->
-        <test-method is-config="true" signature="takeScreenshot()[pri:0, instance:com.testscenario.FB_Login@1c7696c6]" started-at="2023-11-28T17:44:20 CST" name="takeScreenshot" finished-at="2023-11-28T17:44:21 CST" duration-ms="1294" status="PASS">
+        <test-method is-config="true" signature="takeScreenshot()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:37 CST" name="takeScreenshot" finished-at="2023-11-29T15:09:37 CST" duration-ms="359" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.testscenario.FB_Login@1c7696c6]" started-at="2023-11-28T17:44:21 CST" name="afterClass" finished-at="2023-11-28T17:44:21 CST" duration-ms="219" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:37 CST" name="afterClass" finished-at="2023-11-29T15:09:37 CST" duration-ms="147" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
       </class> <!-- com.testscenario.FB_Login -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

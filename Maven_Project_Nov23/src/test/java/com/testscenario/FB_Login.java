@@ -24,13 +24,16 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.objectrepository.Locators;
+import com.utilities.CommonFunctions;
+import com.utilities.StaticVariables;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class FB_Login {
-	WebDriver driver;
+public class FB_Login extends StaticVariables{
+	//WebDriver driver;
 	// create object of locator class
 	Locators obj = new Locators();
+	CommonFunctions cfn = new CommonFunctions();
 
 	@Test
 	public void Fb_login() throws IOException {
@@ -40,9 +43,12 @@ public class FB_Login {
 		prop.load(path);
 
 		driver.get(prop.getProperty("baseURL"));
-		driver.findElement(obj.USERNAME_EDITBOX).sendKeys(prop.getProperty("Username"));
-		driver.findElement(obj.PASSWORD_EDITBOX).sendKeys(prop.getProperty("Password"));
-		driver.findElement(obj.LOGIN_BUTTON).click();
+		//driver.findElement(obj.USERNAME_EDITBOX).sendKeys(prop.getProperty("Username"));
+		cfn.sendKeysByAnyLocator(obj.USERNAME_EDITBOX, prop.getProperty("Username"));
+		//driver.findElement(obj.PASSWORD_EDITBOX).sendKeys(prop.getProperty("Password"));
+		cfn.sendKeysByAnyLocator(obj.PASSWORD_EDITBOX, prop.getProperty("Password"));
+		//driver.findElement(obj.LOGIN_BUTTON).click();
+		cfn.clickByAnyLocator(obj.LOGIN_BUTTON);
 
 	}
 
@@ -54,8 +60,10 @@ public class FB_Login {
 		prop.load(path);
 
 		driver.get("https://www.google.com/");
-		driver.findElement(obj.SEARCH_EDITBOX).sendKeys(prop.getProperty("SearchText"));
-		driver.findElement(obj.SEARCH_BUTTON).click();
+		//driver.findElement(obj.SEARCH_EDITBOX).sendKeys(prop.getProperty("SearchText"));
+		cfn.sendKeysByAnyLocator(obj.SEARCH_EDITBOX, prop.getProperty("SearchText"));
+		//driver.findElement(obj.SEARCH_BUTTON).click();
+		cfn.clickByAnyLocator(obj.SEARCH_BUTTON);
 
 	}
 	@Parameters("browserName")

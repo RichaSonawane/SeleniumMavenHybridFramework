@@ -6,8 +6,9 @@
       <class name="com.testscenario.FB_Login">
         <methods>
           <include name="beforeClass"/>
+          <include name="Fb_login"/>
           <include name="afterClass"/>
-          <include name="login"/>
+          <include name="takeScreenshot"/>
         </methods>
       </class> <!-- com.testscenario.FB_Login -->
     </classes>

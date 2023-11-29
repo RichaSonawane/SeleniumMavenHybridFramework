@@ -1,5 +1,7 @@
 package com.utilities;
 
-public class StaticVariables {
+import org.openqa.selenium.WebDriver;
 
+public class StaticVariables {
+	public static WebDriver driver;
 }
