@@ -15,4 +15,9 @@ public class Locators {
 	public final By SEARCH_EDITBOX = By.name("q");
 	public final By SEARCH_BUTTON = By.name("btnK");
 	
+	//locators for oneok
+	public final By MODAL_BUTTON = By.xpath( "//span[contains(text(),'×')]");
+	public final By SUSTAINABILITY_BUTTON = By.xpath("//a[contains(text(),'Sustainability')]");
+	public final By READ_BUTTON =By.xpath("//button[starts-with(@id,'kt-accordion-header')]");
+	
 }

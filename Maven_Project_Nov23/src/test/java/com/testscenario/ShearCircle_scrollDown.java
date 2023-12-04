@@ -5,13 +5,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,44 +33,32 @@ import com.utilities.StaticVariables;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class FB_Login extends StaticVariables {
+public class ShearCircle_scrollDown extends StaticVariables {
 	// WebDriver driver;
 	// create object of locator class
 	Locators obj = new Locators();
 	CommonFunctions cfn = new CommonFunctions();
 
 	@Test
-	public void Fb_login() throws IOException {
+	public void Oneok_login() throws IOException {
 		// create property file variable to call test data from property file
 		FileInputStream path = new FileInputStream(".\\TestData\\testdata.properties");
 		Properties prop = new Properties();
 		prop.load(path);
 
-		driver.get(prop.getProperty("baseURL"));
-		cfn.implicitWait(2);
+		// oneok url
+		driver.get(prop.getProperty("OneokUrl"));
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		cfn.clickByAnyLocator(obj.MODAL_BUTTON);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		cfn.clickByAnyLocator(obj.SUSTAINABILITY_BUTTON);
+
 		
-		// driver.findElement(obj.USERNAME_EDITBOX).sendKeys(prop.getProperty("Username"));
-		cfn.sendKeysByAnyLocator(obj.USERNAME_EDITBOX, prop.getProperty("Username"));
-		// driver.findElement(obj.PASSWORD_EDITBOX).sendKeys(prop.getProperty("Password"));
-		cfn.sendKeysByAnyLocator(obj.PASSWORD_EDITBOX, prop.getProperty("Password"));
-		// driver.findElement(obj.LOGIN_BUTTON).click();
-		cfn.clickByAnyLocator(obj.LOGIN_BUTTON);
-
-	}
-
-	@Test
-	public void google_login() throws IOException {
-		// for every test we need to call testdata from properties file
-		FileInputStream path = new FileInputStream(".\\TestData\\testdata.properties");
-		Properties prop = new Properties();
-		prop.load(path);
-
-		driver.get("https://www.google.com/");
-		// driver.findElement(obj.SEARCH_EDITBOX).sendKeys(prop.getProperty("SearchText"));
-		cfn.sendKeysByAnyLocator(obj.SEARCH_EDITBOX, prop.getProperty("SearchText"));
-		// driver.findElement(obj.SEARCH_BUTTON).click();
-		cfn.clickByAnyLocator(obj.SEARCH_BUTTON);
-
+		 WebElement element = driver.findElement(obj.READ_BUTTON);
+		 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+		  cfn.clickByAnyLocator(obj.READ_BUTTON);
+		  
+		 
 	}
 
 	@Parameters("browserName")
@@ -97,7 +89,7 @@ public class FB_Login extends StaticVariables {
 
 	@AfterMethod
 	public void takeScreenshot() throws IOException {
-		cfn.takeScreenshotWithTimestamp("FB_Login");
+		cfn.takeScreenshotWithTimestamp("Oneok_Login");
 
 	}
 

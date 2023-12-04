@@ -29,7 +29,7 @@ import com.utilities.StaticVariables;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class FB_Login extends StaticVariables {
+public class TSClass_Template extends StaticVariables {
 	// WebDriver driver;
 	// create object of locator class
 	Locators obj = new Locators();
@@ -42,33 +42,10 @@ public class FB_Login extends StaticVariables {
 		Properties prop = new Properties();
 		prop.load(path);
 
-		driver.get(prop.getProperty("baseURL"));
-		cfn.implicitWait(2);
 		
-		// driver.findElement(obj.USERNAME_EDITBOX).sendKeys(prop.getProperty("Username"));
-		cfn.sendKeysByAnyLocator(obj.USERNAME_EDITBOX, prop.getProperty("Username"));
-		// driver.findElement(obj.PASSWORD_EDITBOX).sendKeys(prop.getProperty("Password"));
-		cfn.sendKeysByAnyLocator(obj.PASSWORD_EDITBOX, prop.getProperty("Password"));
-		// driver.findElement(obj.LOGIN_BUTTON).click();
-		cfn.clickByAnyLocator(obj.LOGIN_BUTTON);
-
 	}
 
-	@Test
-	public void google_login() throws IOException {
-		// for every test we need to call testdata from properties file
-		FileInputStream path = new FileInputStream(".\\TestData\\testdata.properties");
-		Properties prop = new Properties();
-		prop.load(path);
-
-		driver.get("https://www.google.com/");
-		// driver.findElement(obj.SEARCH_EDITBOX).sendKeys(prop.getProperty("SearchText"));
-		cfn.sendKeysByAnyLocator(obj.SEARCH_EDITBOX, prop.getProperty("SearchText"));
-		// driver.findElement(obj.SEARCH_BUTTON).click();
-		cfn.clickByAnyLocator(obj.SEARCH_BUTTON);
-
-	}
-
+	
 	@Parameters("browserName")
 	@BeforeClass
 	public void beforeClass(@Optional("Chrome") String browserName) {

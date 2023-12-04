@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-29T15:09:31 CST" name="Default suite" finished-at="2023-11-29T15:09:37 CST" duration-ms="6252">
+  <suite started-at="2023-12-04T17:04:54 CST" name="Default suite" finished-at="2023-12-04T17:05:00 CST" duration-ms="5872">
     <groups>
     </groups>
-    <test started-at="2023-11-29T15:09:31 CST" name="Default test" finished-at="2023-11-29T15:09:37 CST" duration-ms="6252">
-      <class name="com.testscenario.FB_Login">
-        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:31 CST" name="beforeClass" finished-at="2023-11-29T15:09:32 CST" duration-ms="1480" status="PASS">
+    <test started-at="2023-12-04T17:04:54 CST" name="Default test" finished-at="2023-12-04T17:05:00 CST" duration-ms="5872">
+      <class name="com.testscenario.ShearCircle_scrollDown">
+        <test-method is-config="true" signature="beforeClass(java.lang.String)[pri:0, instance:com.testscenario.ShearCircle_scrollDown@20140db9]" started-at="2023-12-04T17:04:54 CST" name="beforeClass" finished-at="2023-12-04T17:04:56 CST" duration-ms="1902" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,27 +18,19 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method signature="Fb_login()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:32 CST" name="Fb_login" finished-at="2023-11-29T15:09:34 CST" duration-ms="1285" status="PASS">
+        <test-method signature="Oneok_login()[pri:0, instance:com.testscenario.ShearCircle_scrollDown@20140db9]" started-at="2023-12-04T17:04:56 CST" name="Oneok_login" finished-at="2023-12-04T17:04:59 CST" duration-ms="3364" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Fb_login -->
-        <test-method is-config="true" signature="takeScreenshot()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:34 CST" name="takeScreenshot" finished-at="2023-11-29T15:09:35 CST" duration-ms="1752" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- takeScreenshot -->
-        <test-method signature="google_login()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:36 CST" name="google_login" finished-at="2023-11-29T15:09:37 CST" duration-ms="1192" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- google_login -->
-        <test-method is-config="true" signature="takeScreenshot()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:37 CST" name="takeScreenshot" finished-at="2023-11-29T15:09:37 CST" duration-ms="359" status="PASS">
+        </test-method> <!-- Oneok_login -->
+        <test-method is-config="true" signature="takeScreenshot()[pri:0, instance:com.testscenario.ShearCircle_scrollDown@20140db9]" started-at="2023-12-04T17:04:59 CST" name="takeScreenshot" finished-at="2023-12-04T17:05:00 CST" duration-ms="350" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- takeScreenshot -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.testscenario.FB_Login@20140db9]" started-at="2023-11-29T15:09:37 CST" name="afterClass" finished-at="2023-11-29T15:09:37 CST" duration-ms="147" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:com.testscenario.ShearCircle_scrollDown@20140db9]" started-at="2023-12-04T17:05:00 CST" name="afterClass" finished-at="2023-12-04T17:05:00 CST" duration-ms="211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-      </class> <!-- com.testscenario.FB_Login -->
+      </class> <!-- com.testscenario.ShearCircle_scrollDown -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
