@@ -5,23 +5,17 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.util.Date;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -35,40 +29,31 @@ import com.utilities.StaticVariables;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class ShearCircle_scrollDown extends StaticVariables {
+public class MisScroll extends StaticVariables {
 	// WebDriver driver;
 	// create object of locator class
 	Locators obj = new Locators();
 	CommonFunctions cfn = new CommonFunctions();
 
 	@Test
-	public void Oneok_login() throws IOException {
+	public void Fb_login() throws IOException, InterruptedException {
 		// create property file variable to call test data from property file
 		FileInputStream path = new FileInputStream(".\\TestData\\testdata.properties");
 		Properties prop = new Properties();
 		prop.load(path);
-
-		// oneok url
-		driver.get(prop.getProperty("OneokUrl"));
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		cfn.clickByAnyLocator(obj.MODAL_BUTTON);
-		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	
-		WebDriverWait exwait = new WebDriverWait(driver, 20);
-		exwait.until(ExpectedConditions.visibilityOf(driver.findElement(obj.SUSTAINABILITY_BUTTON)));
-		cfn.clickByAnyLocator(obj.SUSTAINABILITY_BUTTON);
-
 		
-		 WebElement element = driver.findElement(obj.READ_BUTTON);
-		 cfn.scrollToElement(element);
-		 //((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
-		  cfn.clickByAnyLocator(obj.READ_BUTTON);
-		  
-		  
-		  
-		 
+		driver.get(prop.getProperty("MisUrl"));
+		cfn.loopAllFramesAndReturnCountOfElement(obj.Zonal_Link);
+		//cfn.IframeCount();
+		cfn.clickByAnyLocator(obj.Zonal_Link);
+		Thread.sleep(5000);
+		System.out.println("********");
+		cfn.loopAllFramesAndReturnCountOfElement(By.xpath("/html/body/table/tbody/tr[7]/td[5]/span"));
+		System.out.println(driver.findElement(By.xpath("/html/body/table/tbody/tr[7]/td[5]/span")).getText());
+		
 	}
 
+	
 	@Parameters("browserName")
 	@BeforeClass
 	public void beforeClass(@Optional("Chrome") String browserName) {
@@ -97,7 +82,7 @@ public class ShearCircle_scrollDown extends StaticVariables {
 
 	@AfterMethod
 	public void takeScreenshot() throws IOException {
-		cfn.takeScreenshotWithTimestamp("Oneok_Login");
+		cfn.takeScreenshotWithTimestamp("mis_Login");
 
 	}
 

@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testscenario.ShearCircle_scrollDown">
+      <class name="com.testscenario.MisScroll">
         <methods>
-          <include name="afterClass"/>
           <include name="takeScreenshot"/>
-          <include name="Oneok_login"/>
+          <include name="afterClass"/>
+          <include name="Fb_login"/>
           <include name="beforeClass"/>
         </methods>
-      </class> <!-- com.testscenario.ShearCircle_scrollDown -->
+      </class> <!-- com.testscenario.MisScroll -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

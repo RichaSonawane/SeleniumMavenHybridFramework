@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -122,8 +123,64 @@ public class CommonFunctions extends StaticVariables {
 	}
 	
 	//****************Explicit wait
-	public void explicitWait(WebElement element) {
-		WebDriverWait exwait = new WebDriverWait(driver, 20);
-		exwait.until(ExpectedConditions.visibilityOf(element));
+	/*
+	 * public void explicitWait(By locator) { WebDriverWait exwait = new
+	 * WebDriverWait(driver, 20); exwait.until(ExpectedConditions.visibilityOf(
+	 * locator)); }
+	 */
+	//********************* Scroll down/up *******************/
+	public void scrollToElement(WebElement element) {
+		System.out.println("***ScrollToElement: ***");
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
+		((JavascriptExecutor) driver).executeScript("arguments[0].style.border='6px groove green'", element);
 	}
+
+	public void scrollToElementBottom(WebElement element) {
+		System.out.println("***ScrollToElementBottom:  ***");
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(false);", element);
+		System.out.println("***ScrollToElementBottom executed; going to hilight el  ***");
+		((JavascriptExecutor) driver).executeScript("arguments[0].style.border='6px groove green'", element);
+		System.out.println("***ScrollToElementBottom executed; hilight el  executed***");
+	}
+	//*************frames handling
+	//*************iframe count
+	public int IframeCount() {
+		driver.switchTo().defaultContent();
+		JavascriptExecutor exe = (JavascriptExecutor)driver;
+		int numberOfFrames=0;
+		numberOfFrames=Integer.parseInt(exe.executeScript("return window.length").toString());
+		System.out.println("Number of iframes on page is : "+ numberOfFrames);
+		return numberOfFrames;
+	}
+	//*********************switching to particular frame
+	public void switchToFrameByInt(int i) {
+		driver.switchTo().defaultContent();
+		driver.switchTo().frame(i);
+	}
+	//******************returns framenumber where element is present
+	public int loopAllFramesAndReturnCountOfElement(By locator) {
+		System.out.println("Inside method for getting frame number where element is present");
+		
+		int elementPresenceFrameCount = 0;
+		int loop = 0;
+		int maxFrameCount = IframeCount();
+		//if given locator is present on webpage then element size would be 1, else 0
+		elementPresenceFrameCount = driver.findElements(locator).size();
+		
+		while(elementPresenceFrameCount == 0 && loop < maxFrameCount) {
+			try {
+				switchToFrameByInt(loop);
+				elementPresenceFrameCount =driver.findElements(locator).size();
+				System.out.println("try loopAllFramesAndReturnWebEL : "+loop+"; elementPresenceFrameCount : "+elementPresenceFrameCount);
+				if(elementPresenceFrameCount >0 ||loop >maxFrameCount) {
+					break;
+				}
+			}catch(Exception ex) {
+				System.out.println("Catch loopAllFramesAndReturnWebEL old: "+loop +"; "+ ex);
+			}
+			loop++;
+			}
+		return elementPresenceFrameCount;
+		}
+	
 }

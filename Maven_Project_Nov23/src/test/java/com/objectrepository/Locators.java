@@ -20,4 +20,9 @@ public class Locators {
 	public final By SUSTAINABILITY_BUTTON = By.xpath("//a[contains(text(),'Sustainability')]");
 	public final By READ_BUTTON =By.xpath("//button[starts-with(@id,'kt-accordion-header')]");
 	
+	//locators for mis
+	//a[@name='P-24Alist']
+	public final By Zonal_Link = By.xpath("//a[@name='P-2Alist']");
+	
+	
 }
