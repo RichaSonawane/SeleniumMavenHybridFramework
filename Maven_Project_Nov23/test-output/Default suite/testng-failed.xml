@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.testscenario.MisScroll">
+      <class name="com.testscenario.TestNGDataProvider">
         <methods>
-          <include name="takeScreenshot"/>
           <include name="afterClass"/>
-          <include name="Fb_login"/>
           <include name="beforeClass"/>
+          <include name="f"/>
         </methods>
-      </class> <!-- com.testscenario.MisScroll -->
+      </class> <!-- com.testscenario.TestNGDataProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -24,5 +24,6 @@ public class Locators {
 	//a[@name='P-24Alist']
 	public final By Zonal_Link = By.xpath("//a[@name='P-2Alist']");
 	
-	
+	//toyota
+	public final By VEHICLE_CHECKBOX = By.xpath("//input[@id='input-AX1']");
 }

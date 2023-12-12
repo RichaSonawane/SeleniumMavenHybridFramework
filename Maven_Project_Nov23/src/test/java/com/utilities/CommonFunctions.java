@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -19,6 +20,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -76,6 +78,12 @@ public class CommonFunctions extends StaticVariables {
 		}
 
 	}
+	//***********click using javascript
+	public void clickUsingJavascript(By locator) {
+		WebElement element = driver.findElement(locator);
+		JavascriptExecutor exe = (JavascriptExecutor) driver;
+		exe.executeScript("argument[0].click()", element);
+	}
 
 	// *************************for timestamp
 	public String timestamp() {
@@ -123,11 +131,10 @@ public class CommonFunctions extends StaticVariables {
 	}
 	
 	//****************Explicit wait
-	/*
-	 * public void explicitWait(By locator) { WebDriverWait exwait = new
-	 * WebDriverWait(driver, 20); exwait.until(ExpectedConditions.visibilityOf(
-	 * locator)); }
-	 */
+	public void explicitWait(int time, By locator) {
+	WebDriverWait exwait = new WebDriverWait(driver, time);
+	 exwait.until(ExpectedConditions.elementToBeClickable(locator));
+	}
 	//********************* Scroll down/up *******************/
 	public void scrollToElement(WebElement element) {
 		System.out.println("***ScrollToElement: ***");
@@ -182,5 +189,28 @@ public class CommonFunctions extends StaticVariables {
 			}
 		return elementPresenceFrameCount;
 		}
-	
+	//***************************selectdropdown by visible text******
+	public void selectByVisibleText(By locator, String visibleText) {
+		WebElement ele = driver.findElement(locator);
+		if(ele.isDisplayed()) {
+			//check if enabled
+			if(ele.isEnabled()) {
+				Select dropdown = new Select(ele);
+				dropdown.selectByVisibleText(visibleText);
+			}
+			else {
+				System.out.println("webelement is not enabled, please check");
+			}
+		}else {
+			System.out.println("element is dissabled, please check");
+		}
+		
+	}
+	//****************move to element by tab key--tab out
+	public void tabMoveOnElement(By locator) {
+		WebElement inputField = driver.findElement(locator);
+		inputField.sendKeys(Keys.TAB);
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+	}
 }
