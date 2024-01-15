@@ -43,7 +43,7 @@ public class TestNGDataProvider extends StaticVariables  {
 
 		// If needed exact version then do
 		// WebDriverManager.chromedriver().browserVersion("84").setup();
-		
+		driver.get("https://www.facebook.com/");
 		driver.manage().window().maximize();
 	}
 

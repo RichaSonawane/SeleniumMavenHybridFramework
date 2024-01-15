@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -148,6 +149,27 @@ public class CommonFunctions extends StaticVariables {
 		System.out.println("***ScrollToElementBottom executed; going to hilight el  ***");
 		((JavascriptExecutor) driver).executeScript("arguments[0].style.border='6px groove green'", element);
 		System.out.println("***ScrollToElementBottom executed; hilight el  executed***");
+	}
+	public void scrollToXY(int x, int y ) {
+		System.out.println("scrolltoxy: move to default conten explicitly, otherwiae it wont work");
+		String script = "window.scrollTo("+X+","+y+")";
+		((JavascriptExecutor)driver).executeScript(script);
+	}
+	
+	public int getXLocationOfElement(WebElement element) {
+		System.out.println("Dont forget to move to your frame");
+		Point point = element.getLocation();
+		int x = point.getX();
+		System.out.println("X coordinate of element is: "+ x);
+		return x;
+	}
+	
+	public int getYLocationOfElement(WebElement element) {
+		System.out.println("Dont forget to move to your frame");
+		Point point = element.getLocation();
+		int y = point.getY();
+		System.out.println("Y coordinate of element is: "+ y);
+		return y;
 	}
 	//*************frames handling
 	//*************iframe count
